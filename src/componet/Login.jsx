@@ -1,3 +1,4 @@
+import { Form } from "react-router-dom";
 import Header from "./Header"
 
 const Login = () =>{
@@ -10,6 +11,7 @@ const Login = () =>{
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover"
       />
+     <Form/>
 
       {/* Header on top of image */}
       <div className="relative z-10 ">
