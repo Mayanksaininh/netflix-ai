@@ -5,4 +5,4 @@ const Front = function App() {
  </div> 
 }
 
-export default Front
+export default Front 

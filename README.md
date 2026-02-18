@@ -18,3 +18,5 @@ If you are developing a production application, we recommend using TypeScript wi
 -Netflix + AI
 -Setup Vite + React
 -Configured TailwindCSS
+
+Creats Components folder & ulits folder
