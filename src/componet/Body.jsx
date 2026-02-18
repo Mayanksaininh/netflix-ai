@@ -17,7 +17,8 @@ const Body = ()=>{
 
     return <div>
          <RouterProvider router={approuter} />
-    </div>
+ </div>
+    
 }
 
 export default Body 
