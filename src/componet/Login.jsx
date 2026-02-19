@@ -1,5 +1,5 @@
 
-import In from "./Form"
+
 import Header from "./Header"
 
 const Login = () =>{
@@ -18,12 +18,6 @@ const Login = () =>{
       <div className="relative z-10 ">
         <Header />
       </div>
-      <div className="relative z-10">
-        <In/>
-
-      </div>
-      
-
 
     </div>
   );
