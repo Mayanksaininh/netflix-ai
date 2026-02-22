@@ -1,6 +1,6 @@
 
-
 import Header from "./Header"
+import LoginPage from "./loginPage";
 
 const Login = () =>{
    return (
@@ -17,6 +17,9 @@ const Login = () =>{
       {/* Header on top of image */}
       <div className="relative z-10 ">
         <Header />
+      </div>
+      <div className="relative z-10 ">
+        <LoginPage />
       </div>
 
     </div>
