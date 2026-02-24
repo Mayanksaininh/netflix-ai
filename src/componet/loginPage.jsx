@@ -1,8 +1,10 @@
 import { useState  , useRef} from "react"
 import vallidateData from "../utils/Validate"
 
+
 const LoginPage = ()=> {
  const [IsSignInform,setIsSignInform] = useState(true)
+ const [ErrorMessage ,setErrorMessage] = useState(null)
 
     const email = useRef(null)
     const password = useRef(null)
@@ -11,9 +13,10 @@ const LoginPage = ()=> {
   //  vallidate the form data 
  const msg = vallidateData(email.current.value , password.current.value)  
  if (msg) {
-    console.log("Error:", msg);
+     setErrorMessage(msg);   // ✅ store error
     return;
   }
+  setErrorMessage(null);  
   console.log("Form Submitted Successfully ✅") 
 
  }
@@ -93,6 +96,11 @@ const LoginPage = ()=> {
             </div>
 
             <div>
+             {ErrorMessage && (
+               <p className="text-red-500 text-sm text-center font-bold ">
+                 {ErrorMessage}
+               </p>
+                )}
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
