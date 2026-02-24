@@ -19,4 +19,6 @@ If you are developing a production application, we recommend using TypeScript wi
 -Setup Vite + React
 -Configured TailwindCSS
 
-Creats Components folder & ulits folder
+-Creats Components folder & ulits folder
+-Creats Routes using react router
+-SignIn / Sign Up form

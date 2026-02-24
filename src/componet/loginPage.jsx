@@ -1,12 +1,28 @@
-import { useState } from "react"
+import { useState  , useRef} from "react"
+import vallidateData from "../utils/Validate"
 
 const LoginPage = ()=> {
  const [IsSignInform,setIsSignInform] = useState(true)
+
+    const email = useRef(null)
+    const password = useRef(null)
+
+ const handleButtonClick = () =>{
+  //  vallidate the form data 
+ const msg = vallidateData(email.current.value , password.current.value)  
+ if (msg) {
+    console.log("Error:", msg);
+    return;
+  }
+  console.log("Form Submitted Successfully ✅") 
+
+ }
 
 
   const toggleSignInform = () =>{
    setIsSignInform(!IsSignInform)
   }
+
   return (
     <div className="">
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -16,7 +32,11 @@ const LoginPage = ()=> {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
+          <form  method="POST" className="space-y-6"
+          onSubmit={(e) => {
+          e.preventDefault();
+          handleButtonClick();
+           }}>
              {!IsSignInform  &&  (
               <div>
               <label htmlFor="Name" className="block text-sm/6 font-medium text-gray-100">
@@ -40,6 +60,7 @@ const LoginPage = ()=> {
               </label>
               <div className="mt-2">
                 <input
+                ref = {email}
                   id="email"
                   name="email"
                   type="email"
@@ -59,6 +80,7 @@ const LoginPage = ()=> {
               </div>
               <div className="mt-2">
                 <input
+                ref = {password}
                   id="password"
                   name="password"
                   type="password"
@@ -74,6 +96,7 @@ const LoginPage = ()=> {
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+               
               >
                 {IsSignInform ? "Sign in" : "Sign Up "}
               </button>
