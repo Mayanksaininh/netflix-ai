@@ -1,6 +1,7 @@
 import { useState  , useRef} from "react"
 import vallidateData from "../utils/Validate"
-
+import {createUserWithEmailAndPassword  , signInWithEmailAndPassword} from "firebase/auth";
+import {auth } from "../utils/Firebase"
 
 const LoginPage = ()=> {
  const [IsSignInform,setIsSignInform] = useState(true)
@@ -17,17 +18,43 @@ const LoginPage = ()=> {
     return;
   }
   setErrorMessage(null);  
-  console.log("Form Submitted Successfully ✅") 
-
+  // console.log("Form Submitted Successfully ✅") 
+  if(!IsSignInform) {
+    // sign up logic
+    
+    createUserWithEmailAndPassword (auth, email.current.value , password.current.value)
+  .then((userCredential) => {
+    const user = userCredential.user;
+    console.log(user)
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode + "-" + errorMessage)
+  });
+  }
+  else{
+    // sign in logic
+    signInWithEmailAndPassword(auth, email.current.value , password.current.value)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user)
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    setErrorMessage(errorCode + "-" + errorMessage)
+  });
+  }
  }
-
 
   const toggleSignInform = () =>{
    setIsSignInform(!IsSignInform)
   }
 
   return (
-    <div className="">
+    <div className="bg-black/50 p-6 rounded-xl shadow-md w-full max-w-md mx-auto mt-8 px-6 pt-8">
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
          
@@ -35,7 +62,9 @@ const LoginPage = ()=> {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form  method="POST" className="space-y-6"
+          <form 
+          
+           method="POST" className="space-y-6"
           onSubmit={(e) => {
           e.preventDefault();
           handleButtonClick();
@@ -51,7 +80,7 @@ const LoginPage = ()=> {
                   name="Name"
                   type="Name"
                   required
-                  autoComplete
+                  autoComplete = "name"
                   className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
                 />
               </div>

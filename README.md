@@ -22,3 +22,12 @@ If you are developing a production application, we recommend using TypeScript wi
 -Creats Components folder & ulits folder
 -Creats Routes using react router
 -SignIn / Sign Up form
+-Validate form data using regex
+-useRef hook
+-Firebase setup
+-Deploying our project on production
+-Authntication Email/Password using Firebase
+-Implement Sign UP User API
+-Implement Sign IN User API
+-Implement redux Store
+-Created redux store with UserSlice
