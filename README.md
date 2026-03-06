@@ -31,3 +31,5 @@ If you are developing a production application, we recommend using TypeScript wi
 -Implement Sign IN User API
 -Implement redux Store
 -Created redux store with UserSlice
+-Implement Sign Out API from Firebase
+-Adding error component
