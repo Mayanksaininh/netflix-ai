@@ -3,9 +3,6 @@ import Login from "./Login"
 import { createBrowserRouter} from "react-router";
 import { RouterProvider} from "react-router/dom";
 
-// import { auth } from "../utils/Firebase";
-
-
 import Error from "./Error";
 
 const Body = ()=>{

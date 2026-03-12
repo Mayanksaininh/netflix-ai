@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { addUSer, removeUser } from "../utils/UserSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { LOGO } from "../utils/Constant";
 
 const Header = () =>{
   const dispatch = useDispatch()
@@ -46,7 +47,7 @@ return () => unsbuscribe
     return <div className="bg-gradient-to-b from-black/90 to-black/20 h-16 flex items-center px-4">
       <img
       className="h-14"
-      src = "https://cisurveys.decipherinc.com/survey/selfserve/53b/logo_2020.png"  alt = "Logo"></img>
+      src = {LOGO}  alt = "Logo"></img>
       { user && <div className="ml-auto">
       <div>
         <button onClick={handleSignOut}
