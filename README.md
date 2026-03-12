@@ -33,3 +33,4 @@ If you are developing a production application, we recommend using TypeScript wi
 -Created redux store with UserSlice
 -Implement Sign Out API from Firebase
 -Adding error component
+-Bugfix : If user not sign in then (/browse) redirect to the browse page and vice-versa
