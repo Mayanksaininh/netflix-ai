@@ -35,4 +35,5 @@ If you are developing a production application, we recommend using TypeScript wi
 -Adding error component
 -Bugfix : If user not sign in then (/browse) redirect to the browse page and vice-versa
 -Unsubscribe to the OnAuthstateChange callback
--Creating Constant File For URL
+-Creating Constant File For URL like logo url , background url and more
+-Registering on the TMDB API and register my webapp on TMDB

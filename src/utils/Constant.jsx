@@ -2,4 +2,10 @@ export const LOGO = "https://cisurveys.decipherinc.com/survey/selfserve/53b/logo
 
 export const BacKGround_Image = "https://assets.nflxext.com/ffe/siteui/vlv3/4371a395-0e42-46ae-be36-5755eebc638b/web/IN-en-20260209-TRIFECTA-perspective_3a6d8659-ddfe-4547-9584-dce64c02c230_small.jpg"
 
-
+export const API_Option = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMWY3NzEyYmExYjE1MTljYTk3YzhhYWI0YzFmOGU3MyIsIm5iZiI6MTc3Mjg4NDE2MC4zNTUsInN1YiI6IjY5YWMxMGMwNDQ2MWFhMGViODdlZDA5NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cLCiaEr2UEIu-SlXcQHYH1CHa23BW1zc0OnBMX-raCM'
+  }
+}; 
