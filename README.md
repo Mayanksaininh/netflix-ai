@@ -38,4 +38,8 @@ If you are developing a production application, we recommend using TypeScript wi
 -Creating Constant File For URL like logo url , background url and more
 -Registering on the TMDB API and register my webapp on TMDB and get access token
 -get data form form now playing movies list API
--Creating my own custom hook for extracting whole to add movie data in store
+-Creating my own custom hook for extracting add whole movie data in store
+-Start building browse page
+-Building Video title component
+-Building video Background component (Keeping trailer video into redux store )
+-Creating custom hook for trailer video
