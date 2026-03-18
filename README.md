@@ -43,3 +43,4 @@ If you are developing a production application, we recommend using TypeScript wi
 -Building Video title component
 -Building video Background component (Keeping trailer video into redux store )
 -Creating custom hook for trailer video
+-Start building VideoBackground styling
