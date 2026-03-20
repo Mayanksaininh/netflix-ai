@@ -27,8 +27,8 @@ useEffect(() =>{
   const unsbuscribe = onAuthStateChanged(auth, (user) => {
   if (user) {
    
-    const {uid , email, dispalyName } = user;
-    dispatch(addUSer({uid: uid, email: email, dispalyName: dispalyName}))
+    const {uid , email, displayName } = user;
+    dispatch(addUSer({uid: uid, email: email, dispalyName: displayName}))
 
     // ...
     Navigate("/browse")

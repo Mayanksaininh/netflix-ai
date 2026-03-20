@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Body from './componet/Body'
@@ -7,9 +7,8 @@ import AppStore from './utils/AppStore'
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     
     <Provider store = {AppStore}
     ><Body/> </Provider>
-  </StrictMode>,
+  
 )

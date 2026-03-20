@@ -44,3 +44,8 @@ If you are developing a production application, we recommend using TypeScript wi
 -Building video Background component (Keeping trailer video into redux store )
 -Creating custom hook for trailer video
 -Start building VideoBackground styling
+-Embeded the youtube video and make it autoplay and mute
+-Tailwind classes to make main container look cool
+-Creating Movies suggetions list like (Now palying movie, popular movie, trending , horror)
+-MovieList Component
+-MovieList Card Component
