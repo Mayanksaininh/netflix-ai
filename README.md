@@ -49,3 +49,7 @@ If you are developing a production application, we recommend using TypeScript wi
 -Creating Movies suggetions list like (Now palying movie, popular movie, trending , horror)
 -MovieList Component
 -MovieList Card Component
+-Creating custom hooks for popular movies , toprated movies , upcoming movies
+-Creats slice for all these movies
+-Adding in store
+-Render all these on browse page

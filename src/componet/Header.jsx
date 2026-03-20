@@ -44,7 +44,7 @@ return () => unsbuscribe
 }, [])
 
 
-    return <div className="bg-gradient-to-b from-black/90 to-black/20 h-16 flex items-center px-4">
+    return <div className="bg-gradient-to-b from-black/90 to-black/20 h-16 flex items-center px-4 bg-black">
       <img
       className="h-14"
       src = {LOGO}  alt = "Logo"></img>
