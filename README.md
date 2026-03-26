@@ -53,3 +53,7 @@ If you are developing a production application, we recommend using TypeScript wi
 -Creats slice for all these movies
 -Adding in store
 -Render all these on browse page
+-Adding button for AI search
+-I want AI search button will be show when user is loged in, so I placed this button with sign out button
+-Let's make seprate page for AI
+-Building page for AI search

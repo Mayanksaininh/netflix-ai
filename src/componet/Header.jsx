@@ -7,6 +7,7 @@ import { addUSer, removeUser } from "../utils/UserSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { LOGO } from "../utils/Constant";
+import { toggleGPTSearchView } from "../utils/GPTSlice";
 
 const Header = () =>{
   const dispatch = useDispatch()
@@ -28,7 +29,7 @@ useEffect(() =>{
   if (user) {
    
     const {uid , email, displayName } = user;
-    dispatch(addUSer({uid: uid, email: email, dispalyName: displayName}))
+    dispatch(addUSer({uid: uid, email: email, displayName: displayName}))
 
     // ...
     Navigate("/browse")
@@ -39,9 +40,14 @@ useEffect(() =>{
   }
 });
 // unsubscribe when component unmount 
-return () => unsbuscribe
+return () => unsbuscribe()
 
 }, [])
+
+const handleGPTsearchClick = () =>{
+  // Toggle GPT search button
+  dispatch(toggleGPTSearchView())
+}
 
 
     return <div className="bg-gradient-to-b from-black/90 to-black/20 h-16 flex items-center px-4 bg-black">
@@ -50,6 +56,8 @@ return () => unsbuscribe
       src = {LOGO}  alt = "Logo"></img>
       { user && <div className="ml-auto">
       <div>
+        <button className="text-white bg-purple-600 hover:bg-purple-800 px-3 py-1 text-base mr-3 rounded" 
+        onClick={handleGPTsearchClick}>Ask AI</button>
         <button onClick={handleSignOut}
         className="text-white bg-red-500 hover:bg-red-700 px-2 py-1 text-sm rounded">Sign Out</button>
       </div>
