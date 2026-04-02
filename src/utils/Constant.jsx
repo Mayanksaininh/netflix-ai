@@ -11,3 +11,5 @@ export const API_Option = {
 }; 
 
 export const IMG_CRN_URL = "https://image.tmdb.org/t/p/w200"
+
+export const supported_lang = [{identifire : "en" , name : "English"} , {identifire : "hindi" , name : "Hindi"} ,{identifire : "spanish" , name : "Spanish"},{identifire : "french" , name : "French"}] 

@@ -57,3 +57,4 @@ If you are developing a production application, we recommend using TypeScript wi
 -I want AI search button will be show when user is loged in, so I placed this button with sign out button
 -Let's make seprate page for AI
 -Building page for AI search
+-Making a constant file for multi language and using a map render all supported language in ask Ai component
