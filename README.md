@@ -58,3 +58,7 @@ If you are developing a production application, we recommend using TypeScript wi
 -Let's make seprate page for AI
 -Building page for AI search
 -Making a constant file for multi language and using a map render all supported language in ask Ai component
+-Making slice for language and add in store
+-Only Ask AI is language dependent
+-Multilanguage is hide on the browse page and hide it using redux
+-Toggle the ASK AI button with browse page
