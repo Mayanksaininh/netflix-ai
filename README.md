@@ -62,3 +62,6 @@ If you are developing a production application, we recommend using TypeScript wi
 -Only Ask AI is language dependent
 -Multilanguage is hide on the browse page and hide it using redux
 -Toggle the ASK AI button with browse page
+-Import gemini form npm
+-Add gemini API key
+-Secure gemini API key and inntegrated
