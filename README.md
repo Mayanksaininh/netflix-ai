@@ -67,3 +67,6 @@ If you are developing a production application, we recommend using TypeScript wi
 -Secure gemini API key and inntegrated
 -Adding gemini movies result in the redux store
 -I learned how to add multiple data into same action
+-AI serach bar almost done
+-Building gemini Movie Suggestion
+-Reuse of MovieList component whuch is learing for me

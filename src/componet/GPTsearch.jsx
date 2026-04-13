@@ -9,7 +9,7 @@ const GPTsearch= () =>{
        <img
               src={BacKGround_Image}
               alt="Background"
-              className="absolute inset-0 w-full h-full object-cover -z-10"
+              className="fixed inset-0 w-full h-full object-cover -z-10"
       /> 
       
       <SearchBar/>
