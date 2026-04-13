@@ -1,12 +1,14 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import lang from "../utils/languageConstant"
 import { useRef } from "react"
 import { GoogleGenerativeAI } from "@google/generative-ai";
-// import { gemini_APIkey } from "../utils/Constant";
+import { API_Option } from "../utils/Constant";
+import { addgptMoviesResult } from "../utils/GPTSlice";
 
 
 const SearchBar = ()=>{
 
+  const dispatch = useDispatch()
     const searchText = useRef(null)
 
     const langkey = useSelector(
@@ -16,20 +18,46 @@ const SearchBar = ()=>{
 
     const genAI = new GoogleGenerativeAI( import.meta.env.VITE_GEMINI_API_KEY);
 
+    // serach movies in TMDB 
+    const searchMoviesTMDB = async(movie) =>{
+      const data = await fetch(`https://api.themoviedb.org/3/search/movie?query=${movie}&include_adult=false&language=en-US&page=1&api_key` , API_Option)
+
+      const json = await data.json()
+      return json.results
+    }
+
     const handleGPTserachClick = async() =>{
      try {
     const query = searchText.current.value;
-    console.log(query);
+    // console.log(query);
 
     const model = genAI.getGenerativeModel({
       model: "gemini-3-flash-preview"
     });
-         const result = await model.generateContent(query);
-    const response = await result.response;
-    const text =
-      result?.response?.candidates?.[0]?.content?.parts?.[0]?.text;
+     const prompt = `
+    Act as a movie recommendation system.
+    Suggest 5 movies for: "${query}"
+    Only return movie names separated by commas.
+    Example: Inception, Interstellar, Avatar
+    `;
 
-    console.log("AI Response:", text);
+         const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const gptMovies =
+      result?.response?.candidates?.[0]?.content?.parts?.[0]?.text.split(",");
+
+    // console.log("AI Response:", text);
+
+    // for each movie I will search for TMDB API
+    const PromiseArray = gptMovies.map((movie) => searchMoviesTMDB(movie))
+
+    // this promisearray return array of promise and wait for resolve all promises 
+
+    const TMDBResult = await Promise.all(PromiseArray)
+    console.log("AI Response:" , TMDBResult)
+
+    dispatch(addgptMoviesResult({movieName : gptMovies, movieResult : TMDBResult}))
+
   } catch (error) {
     console.error("Error:", error);
   }

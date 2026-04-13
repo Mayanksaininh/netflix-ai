@@ -65,3 +65,5 @@ If you are developing a production application, we recommend using TypeScript wi
 -Import gemini form npm
 -Add gemini API key
 -Secure gemini API key and inntegrated
+-Adding gemini movies result in the redux store
+-I learned how to add multiple data into same action
