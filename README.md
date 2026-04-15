@@ -70,3 +70,4 @@ If you are developing a production application, we recommend using TypeScript wi
 -AI serach bar almost done
 -Building gemini Movie Suggestion
 -Reuse of MovieList component whuch is learing for me
+-Memoization of API
