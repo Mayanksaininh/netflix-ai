@@ -71,3 +71,4 @@ If you are developing a production application, we recommend using TypeScript wi
 -Building gemini Movie Suggestion
 -Reuse of MovieList component whuch is learing for me
 -Memoization of API
+-Start building responsive
