@@ -57,21 +57,22 @@ const handleLanguageChange = (e)=>{
 }
 
 
-    return <div className="bg-gradient-to-b from-black/90 to-black/20 h-16 flex items-center px-4 bg-black sm:bg-black-500 md: bg-black-500">
+    return <div className="bg-gradient-to-b from-black/90 to-black/20 h-16 flex items-center justify-between px-4 bg-black sm:bg-black md: bg-black flex-wrap">
       <img
-      className="h-14"
+      className="h-6 md:h-9"
       src = {LOGO}  alt = "Logo"></img>
       { user && ( <div className="ml-auto">
-      <div>
-        { showGPTsearch && <select className="bg-gray-800 text-white px-2 py-1 rounded mr-3" onClick={handleLanguageChange}>
+      <div className="flex items-center gap-1">
+        { showGPTsearch && <select className="bg-gray-800 text-white px-2 py-1 text-sm rounded"
+         onClick={handleLanguageChange}>
           {supported_lang.map((lang) => (<option key={lang.identifire} value={lang.identifire}>{lang.name}</option>))}
         </select>}
-        <button className="text-white bg-purple-600 hover:bg-purple-800 px-3 py-1 text-base mr-3 rounded" 
+        <button className="text-white bg-purple-600 px-2 py-1 text-sm md:px-3 md:text-base rounded"
         onClick={handleGPTsearchClick}>
           {showGPTsearch ? "Browse page" : "Ask AI"}
           </button>
         <button onClick={handleSignOut}
-        className="text-white bg-red-500 hover:bg-red-700 px-2 py-1 text-sm rounded">Sign Out</button>
+        className="text-white bg-red-500 px-2 py-1 text-sm md:px-3 md:text-base rounded">Sign Out</button>
       </div>
       </div> )}
       </div>

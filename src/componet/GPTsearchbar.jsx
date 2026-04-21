@@ -66,7 +66,7 @@ const SearchBar = ()=>{
         <div >
            <form
            onSubmit={(e) => e.preventDefault()}
-           className="px-3  mt-[9%] flex gap-3 justify-center  bg-black text-white ml-[30%] mr-[30%] pl-3">
+           className="px-3  mt-[9%] flex gap-2 justify-center  bg-black text-white w-full md:w-1/2 mx-auto">
             <input
             ref = {searchText}
             type = "text" 
