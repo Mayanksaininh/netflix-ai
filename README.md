@@ -73,3 +73,4 @@ If you are developing a production application, we recommend using TypeScript wi
 -Memoization of API
 -Start building responsive
 -Makes Responsive for mobile
+-Make some changes
