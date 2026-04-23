@@ -27,7 +27,7 @@ const LoginPage = ()=> {
     createUserWithEmailAndPassword (auth, email.current.value , password.current.value)
   .then((userCredential) => {
     const user = userCredential.user;
-    console.log(user)
+    // console.log(user)
     
   })
   .catch((error) => {
@@ -42,7 +42,7 @@ const LoginPage = ()=> {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user)
+    // console.log(user)
     
   })
   .catch((error) => {

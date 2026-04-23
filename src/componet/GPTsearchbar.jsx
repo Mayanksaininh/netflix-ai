@@ -54,7 +54,7 @@ const SearchBar = ()=>{
     // this promisearray return array of promise and wait for resolve all promises 
 
     const TMDBResult = await Promise.all(PromiseArray)
-    console.log("AI Response:" , TMDBResult)
+    // console.log("AI Response:" , TMDBResult)
 
     dispatch(addgptMoviesResult({movieName : gptMovies, movieResult : TMDBResult}))
 
